@@ -14,7 +14,7 @@ public class asigment1_1_task3 {
 
         System.out.println("The sum of the numbers is " + (first + second + third));
         System.out.println("The product of the numbers is " + (first * second * third));
-        System.out.println("The average of the numbers is " + (first + second + third)/3);
-
+        System.out.println("The average of the numbers is " + (double)(first + second + third)/3);
+//If no have double, the value be integer, double give decimal number.
     }
 }

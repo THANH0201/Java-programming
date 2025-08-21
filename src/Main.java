@@ -1,15 +1,26 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
 public class Main {
-    public static void head(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.println("Hello and welcome!");
+    public static int getNumber(Scanner scanner) {
+        System.out.print("Enter a number: ");
+        String inputLine = scanner.nextLine();//scanner o day la bien chu thuong
+        int value = Integer.parseInt(inputLine);
+        return value;
     }
-   //print out string inside method main,
+
     public static void main(String[] args) {
-        System.out.print("Hello World! It is time to start our world!\n");// print + \n: xuong dong
-        System.out.println("This is the second line!");//println tu xuong dong
-        System.out.println("Hello World!");
+        Scanner input = new Scanner(System.in);
+        int[] t = new int[5];//array named t
+
+        for(int i =0; i< t.length; i++){
+            t[i] = getNumber(input);
+        }
+        int[] temp = new int[10];
+        for(int i =0; i< t.length; i++){
+            temp[i] = t[i];
+        }
+        t=temp;
+        for(int i =0; i< t.length; i++) {
+            System.out.println(t[i]);
+        }
     }
 }

@@ -6,7 +6,8 @@ public class hellouser {
         String name = reader.nextLine();
         System.out.print("How old are you?");
         int age = Integer.parseInt(reader.nextLine());
-        //double x = Double.parseDouble(reader.nextLine());
+        //double x = Double.parseDouble(reader.nextLine()); //convert
+        // double x = Scanner.reader.nextDouble();
         //boolean x = Boolean.parseBoolean(reader.nextLine());
         System.out.println("Hello " + name + ", you are " + age + " years old!");
     }

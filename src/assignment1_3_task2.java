@@ -8,10 +8,12 @@ public class assignment1_3_task2 {
             int binlen = binary.length();
             int decimal = 0;
             for (int i = 0; i < binlen; i++) {
-                int number = (binary.charAt(i) - '0') * (int) Math.pow(2, (binlen - 1 - i));
+                int number = (binary.charAt(i) - '0') * (int) Math.pow(2, (binlen -1 - i));
                 decimal += number;
             }
             System.out.printf("The number in decimal is %d:\n", decimal);
+
+            break;
         }
     }
 }

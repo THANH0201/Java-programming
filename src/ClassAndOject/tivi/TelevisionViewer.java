@@ -1,4 +1,4 @@
-package tivi;
+package ClassAndOject.tivi;
 
 public class TelevisionViewer {
     public static void main(String[] args) {

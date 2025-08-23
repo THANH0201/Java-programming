@@ -1,4 +1,4 @@
-package tivi;
+package ClassAndOject.tivi;
 
 public class Television {
     private boolean isOn = false;

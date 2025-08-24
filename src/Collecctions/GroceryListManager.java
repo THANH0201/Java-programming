@@ -3,8 +3,26 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 public class GroceryListManager {
+    ArrayList<String> groceryList = new ArrayList<>();
+    public void addItem(String item) {
+        groceryList.add(item);
+        System.out.println("Added");
+    }
+    public void removeItem(String item) {
+        groceryList.remove(item);
+        System.out.println("Deleted");
+    }
+    public void displayGroceryList() {
+        for (int i = 0; i < groceryList.size(); i++) {
+            System.out.printf("%d. %s\n", i + 1, groceryList.get(i));
+        }
+    }
+    public void checkItem(String checkItem) {
+        boolean hasCheckItem = groceryList.contains(checkItem);
+        System.out.printf("Is \"%s\" in the grocery list? %b\n", checkItem, hasCheckItem);
+    }
     public static void main(String[] args) {
-        ArrayList<String> groceryList = new ArrayList<>();
+        GroceryListManager myList  = new GroceryListManager();
         Scanner input = new Scanner(System.in);
         while (true) {
             try {
@@ -25,30 +43,23 @@ public class GroceryListManager {
                             if (item.equalsIgnoreCase("ok")) {
                                 break;
                             }
-                            groceryList.add(item);
+                            myList.addItem(item);
                         }
                         System.out.println("Added");
                         break;
                     case 2:
                         System.out.print("Delete items: ");
                         String deleteItem = input.nextLine();
-                        if (groceryList.remove(deleteItem)) {
-                            System.out.println("Deleted " + deleteItem);
-                        } else {
-                            System.out.println("The item is not found");
-                        }
+                        myList.removeItem(deleteItem);
                         break;
                     case 3:
                         System.out.println("📋 Grocery List:");
-                        for (int i = 0; i < groceryList.size(); i++) {
-                            System.out.printf("%d. %s\n", i + 1, groceryList.get(i));
-                        }
+                        myList.displayGroceryList();
                         break;
                     case 4:
                         System.out.print("Check items: ");
                         String checkItem = input.nextLine();
-                        boolean hasCheckItem = groceryList.contains(checkItem);
-                        System.out.printf("Is \"%s\" in the grocery list? %b\n", checkItem, hasCheckItem);
+                        myList.checkItem(checkItem);
                         break;
                 }
             } catch (InputMismatchException e) {

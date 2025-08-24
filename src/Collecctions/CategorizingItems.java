@@ -1,9 +1,6 @@
 package Collecctions;
 
-import java.util.HashMap;
-import java.util.InputMismatchException;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 class ListItems {
     String item;
@@ -20,35 +17,50 @@ class ListItems {
         return String.format("Item: %s, Cost: %.2f, Category: %s", item, cost, category);
     }
     public static class CategorizingItems {
-        HashMap<String, ListItems> categoryManage = new HashMap<>();
+        HashMap<String, List<ListItems>> categoryManage = new HashMap<>();
+        HashMap<String, ListItems> itemLookup = new HashMap<>();
+
 
         public void addItem(String item, double cost, String category) {
             ListItems newItem = new ListItems(item, cost, category);
-            categoryManage.put(item, newItem);
+            categoryManage.computeIfAbsent(category, k -> new ArrayList<>()).add(newItem);
+            itemLookup.put(item.toLowerCase(), newItem);
+            //ListItems newItem = new ListItems(item, cost, category);
+            //categoryManage.put(item, newItem);
             System.out.println("Added");
         }
 
         public double calculate() {
             double total = 0;
-            for (ListItems item : categoryManage.values()) {
-                total += item.cost;
+            for (List<ListItems> items : categoryManage.values()) {
+                for (ListItems item : items) {
+                    total += item.cost;
+                }
             }
             return total;
         }
         public void displayList() {
             int index = 1;
-            for (Map.Entry<String, ListItems> entry : categoryManage.entrySet()) {
-                System.out.printf("%d. %s \n", index++, entry.getValue());
+            for (Map.Entry<String, List<ListItems>> entry : categoryManage.entrySet()) {
+                for (ListItems item : entry.getValue()) {
+                    System.out.printf("%d. %s \n", index++, item);
+                }
             }
         }
         public void deleteItem(String item) {
             categoryManage.remove(item);
             System.out.println("Deleted");
         }
+        public void displayByCategory(String category) {
+            List<ListItems> items = categoryManage.get(category);
+            System.out.printf("Items in category %s: ", category);
+            for (ListItems item : items) {
+                System.out.println(item);
+            }
+        }
         public void checkItem(String checkItem) {
-            boolean hasCheckItem = categoryManage.containsKey(checkItem);
-            System.out.printf("Is \"%s\" in the grocery list? %b\n", checkItem, hasCheckItem);
-            ListItems item = categoryManage.get(checkItem);
+            ListItems item = itemLookup.get(checkItem.toLowerCase());
+            System.out.printf("\"%s\" in the list\n", checkItem);
             System.out.printf("%s cost: %.2f\n", checkItem, item.cost);
             System.out.printf("Category: %s\n", item.category);
         }
@@ -63,7 +75,8 @@ class ListItems {
                     System.out.println("3. Display all items");
                     System.out.println("4. Delete item");
                     System.out.println("5. Check item");
-                    System.out.println("6. Exit");
+                    System.out.println("6. Display category");
+                    System.out.println("7. Exit");
                     System.out.println("Enter task: ");
                     int task = input.nextInt();
                     input.nextLine();
@@ -104,12 +117,17 @@ class ListItems {
                             myList.checkItem(checkItem);
                             break;
                         case 6:
+                            System.out.println("Display category");
+                            String category = input.nextLine();
+                            myList.displayByCategory(category);
+                            break;
+                        case 7:
                             System.out.println("Exit");
                             input.close();
                             System.exit(0);
                             break;
                         default:
-                            System.out.println("Enter a number from 1 to 6.");
+                            System.out.println("Enter a number from 1 to 7.");
                     }
                 } catch (InputMismatchException e) {
                     System.out.println("Enter number from 1 to 6");

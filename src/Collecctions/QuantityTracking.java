@@ -112,12 +112,11 @@ public class QuantityTracking {
                                     break;
                                 }
                                 System.out.printf("Item %d cost: ", i + 1);
-                                double cost = input.nextDouble();
-                                input.nextLine();
+                                double cost = Double.parseDouble(input.nextLine());
                                 System.out.printf("Item %d category: ", i + 1);
                                 String category = input.nextLine();
                                 System.out.printf("Item %d quantity: ", i + 1);
-                                int quantity = input.nextInt();
+                                int quantity = Integer.parseInt(input.nextLine());
                                 myList.addItem(item, cost, category,quantity);
                             }
                             System.out.println("Added");

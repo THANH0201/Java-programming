@@ -29,7 +29,7 @@ public class CoffeeMaker {
         return type[choice];
     }
     public void setCoffeeAmount(int amount) {
-        if (amount > 180) {
+        if (amount > 80) {
             this.amount = 10;
         } else {
             this.amount = amount;

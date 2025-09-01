@@ -16,6 +16,4 @@ public class Circle extends Shape {
     public String toString() {
         return "Circle with radius " + radius +  super.toString();
     }
-
-
 }

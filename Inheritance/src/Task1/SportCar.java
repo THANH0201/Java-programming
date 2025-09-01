@@ -38,6 +38,5 @@ public class SportCar extends ModifiedCar  {
         System.out.println("Accelerate of " + car1.name + " is " + car1.getGasolevel() + " l/km");
 
     }
-
 }
 

@@ -16,7 +16,5 @@ public class ModifiedCar {
         ModifiedCar car1 = new ModifiedCar(100, 200);
         car1.introCar();
 
-
-
     }
 }

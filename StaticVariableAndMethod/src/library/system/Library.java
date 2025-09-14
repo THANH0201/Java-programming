@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Library {
-    List<Book> books =  new ArrayList<>();
-    List<LibraryMember> members = new ArrayList<>();
+    ArrayList<Book> books =  new ArrayList<>();
+    ArrayList<LibraryMember> members = new ArrayList<>();
     public void addBooks(Book book) {
         books.add(book);
     }

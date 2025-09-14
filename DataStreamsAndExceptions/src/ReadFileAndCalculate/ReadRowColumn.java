@@ -54,19 +54,24 @@ public class ReadRowColumn {
                 // Ghi ra file nếu có giá trị
                 if (!extractedValues.isEmpty()) {
                     try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFileName))) {
-                        for (String value : extractedValues) {
-                            writer.write(value);
+                        writer.write("Index;Value");
+                        writer.newLine();
+                        for (int i = 0; i < extractedValues.size(); i++) {
+                            writer.write(i + ";\"" + extractedValues.get(i) + "\""); // Dùng dấu chấm phẩy để phân cách
                             writer.newLine();
                             counter++;
+                         //   System.out.println(": " + i + ";" + extractedValues.get(i));
+
                         }
+
                     }
                 } else {
-                    System.err.println("Không tìm thấy giá trị phù hợp.");
+                    System.err.println("Not found.");
                 }
                 System.out.println("Total row: " + counter);
             }
         } catch (IOException e) {
-            System.err.println("Lỗi xử lý: " + e.getMessage());
+            System.err.println("Error" + e.getMessage());
         }
     }
     public List<String> getExtractedValues() {

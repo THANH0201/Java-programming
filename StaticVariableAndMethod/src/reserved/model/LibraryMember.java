@@ -59,6 +59,6 @@ public class LibraryMember {
     }
     @Override
     public String toString() {
-        return String.format("Members %s added. This is member %d", memberID, countID);
+        return String.format("Members %s added.", memberID);
     }
 }

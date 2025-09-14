@@ -25,7 +25,7 @@ public class ReadCSVFile {
                 InputStream inputStream = url.openStream();
                 BufferedReader bufferedstream =new BufferedReader(new InputStreamReader(inputStream));
             //openfile
-                BufferedWriter writer = new BufferedWriter(new FileWriter("data.txt"));
+                BufferedWriter writer = new BufferedWriter(new FileWriter("data.csv"));
             ) {
                 while ((line = bufferedstream.readLine()) != null) {
                     data.add(line);
@@ -51,7 +51,7 @@ public class ReadCSVFile {
                     }
                 }
                 System.out.println("Total row: " + rowCount);
-                System.out.println("Written file data.txt");
+                System.out.println("Written file data.csv");
             }
         } catch (IOException e) {
             System.err.println("Error from URL: " + e.getMessage());

@@ -6,7 +6,7 @@ import java.util.List;
 public class LibraryMember {
     private String name;
     private int memberID;
-    private List<Book> borrowedBooks;
+    private ArrayList<Book> borrowedBooks;
     private static int countID = 0;
     public LibraryMember(int memberID, String name) {
         this.name = name;
@@ -34,6 +34,6 @@ public class LibraryMember {
     }
     @Override
     public String toString() {
-        return String.format("Members %s added. This is member %d", memberID, countID);
+        return String.format("Members %s added.", memberID);
     }
 }

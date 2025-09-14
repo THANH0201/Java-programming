@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AI assitance/AI assitance.iml" filepath="$PROJECT_DIR$/AI assitance/AI assitance.iml" />
       <module fileurl="file://$PROJECT_DIR$/Assocition/Assocition.iml" filepath="$PROJECT_DIR$/Assocition/Assocition.iml" />
       <module fileurl="file://$PROJECT_DIR$/DataStreamsAndExceptions/DataStreamsAndExceptions.iml" filepath="$PROJECT_DIR$/DataStreamsAndExceptions/DataStreamsAndExceptions.iml" />
       <module fileurl="file://$PROJECT_DIR$/Inheritance/Inheritance.iml" filepath="$PROJECT_DIR$/Inheritance/Inheritance.iml" />
       <module fileurl="file://$PROJECT_DIR$/Interface/Interface.iml" filepath="$PROJECT_DIR$/Interface/Interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaPrograming.iml" filepath="$PROJECT_DIR$/JavaPrograming.iml" />
       <module fileurl="file://$PROJECT_DIR$/StaticVariableAndMethod/StaticVariableAndMethod.iml" filepath="$PROJECT_DIR$/StaticVariableAndMethod/StaticVariableAndMethod.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Threads/Threads.iml" filepath="$PROJECT_DIR$/Threads/Threads.iml" />
+      <module fileurl="file://$PROJECT_DIR$/review/review.iml" filepath="$PROJECT_DIR$/review/review.iml" />
     </modules>
   </component>
 </project>
